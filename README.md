@@ -5,7 +5,7 @@ NullProjectは個人で製作したUnityゲームです。
 ただゴールを目指すだけのシンプルなゲームです。  
 アップデートは随時更新予定。
   
-![NullProjectゲーム画像](readme_img/null_p01.png)  
+![NullProjectゲーム画像](readmeImg/null_p01.png)  
   
 
 * 制作人数：1名  
