@@ -10,6 +10,8 @@ public class UIController : MonoBehaviour
     public Sprite gameOverSprite;  //ゲームオーバーの絵
     public GameObject retryButton; //リトライボタン
     public GameObject buttonPanel;
+    public GameObject gameOverPanel;
+    public GameObject gameCrearPanel;
 
 
     void Start()
@@ -23,32 +25,40 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.gameState == GameState.playing)
+        if (GameManager.gameState == GameState.gameclear)
         {
-            //2秒後に削除 
-            Destroy(gameObject, 2.0f); 
+            Debug.Log("くりあ!!");
 
-
-        }
-
-        else if (GameManager.gameState == GameState.gameover)
-        {
-            buttonPanel.SetActive(true); //ボタンパネルの復活
-            mainImage.SetActive(true);　 //メイン画像の復活
-            //メイン画像オブジェクトのImageコンポーネントが所持している変数spriteにステージクリアの絵を代入
-            mainImage.GetComponent<Image>().sprite = gameOverSprite;
-            //リトライボタンオブジェクトのButtonコンポーネントが所持している変数interactibleを無効（ボタン機能を無効）
-            retryButton.GetComponent<Button>().interactable = false;
-
-        }
-        else if (GameManager.gameState == GameState.gameclear)
-        {
             buttonPanel.SetActive(true); //ボタンパネルの復活
             mainImage.SetActive(true);　 //メイン画像の復活
             //メイン画像オブジェクトのImageコンポーネントが所持している変数spriteにステージクリアの絵を代入
             mainImage.GetComponent<Image>().sprite = gameClearSprite;
             //リトライボタンオブジェクトのButtonコンポーネントが所持している変数interactibleを無効（ボタン機能を無効）
             //retryButton.GetComponent<Button>().interactable = false;
+            gameCrearPanel.SetActive(true);
+
+        }
+        
+
+        else if (GameManager.gameState == GameState.gameover)
+        {
+            
+            buttonPanel.SetActive(true); //ボタンパネルの復活
+            mainImage.SetActive(true);　 //メイン画像の復活
+            //メイン画像オブジェクトのImageコンポーネントが所持している変数spriteにステージクリアの絵を代入
+            mainImage.GetComponent<Image>().sprite = gameOverSprite;
+            //リトライボタンオブジェクトのButtonコンポーネントが所持している変数interactibleを無効（ボタン機能を無効）
+            retryButton.GetComponent<Button>().interactable = false;
+            gameOverPanel.SetActive(true);
+
+        }
+
+        else if (GameManager.gameState == GameState.playing)
+        {
+            //2秒後に削除 
+            Destroy(gameObject, 2.0f);
+
+
 
         }
 
