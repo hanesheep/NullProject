@@ -13,8 +13,7 @@ NullProjectは個人で製作したUnityゲームです。
 * 制作期間：3日間  
 * 使用エンジン：Unity Editorバージョン 6000.0.54f1 
 * シーンレンダー：Universal 3D  
-* 使用言語：C#  
-* 使用アセット：（いずれもUnityアセットストアから）  
+* 使用言語：C#    
 * Fontデータ： Noto Sans JP-Medium SDF (TMP_Font Asset)  
 * そのほかの使用ツール：GitHub、SourceTree、VisualStudio  
   
